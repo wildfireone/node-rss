@@ -19,7 +19,8 @@ request({
 }, function (error, response, body) {
   if (!error && response.statusCode === 200) {
       body["photos"]["photo"].forEach(function(photo) {
-        console.log(photo);
+          var imgurl = "https://farm"+photo.farm+".staticflickr.com/"+photo.server+"/"+photo.id+"_"+photo.secret+"_b.jpg";
+        console.log(imgurl));
         });
   }
     
