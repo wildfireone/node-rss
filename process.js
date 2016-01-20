@@ -18,7 +18,9 @@ request({
     json: true
 }, function (error, response, body) {
   if (!error && response.statusCode === 200) {
-      console.log(body["photos"]["photo"]) // Print the json response
+      body["photos"]["photo"].forEach(function(photo) {
+        console.log(photo);
+        });
   }
     
 })
