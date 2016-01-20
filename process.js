@@ -1,6 +1,6 @@
 //
 var feed = require("feed-read");
-feed("https://api.flickr.com/services/feeds/photos_public.gne?id=55336091@N08&lang=en-us&format=rss_200", function(err, articles) {
+feed("https://500px.com/johnisaacs/rss", function(err, articles) {
   if (err) throw err;
   articles.forEach(function(article) {
     console.log(article.title);
