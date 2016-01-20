@@ -11,12 +11,7 @@ var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search"+
 request({
     url: url,
     json: true
-}, function (error, response, body) {
-
-    if (!error && response.statusCode === 200) {
-        function jsonFlickrApi(data){
+}, function jsonFlickrApi(data){
             console.log(data) // Print the json response
-        }
         
-    }
 })
