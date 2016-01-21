@@ -10,7 +10,8 @@ var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search"+
 "&nojsoncallback=1"
 
 
-var ghosturl = "http://178.62.11.184:2368/ghost/api/v0.1/posts?access_token=pS0l9YmQewwaPfWeXqi0KFSmXROfGsXW8sFOzjRDCuMBuSbSJelTSqQsHawHPxrAY7QJNxDDoDqvL364wzswOEs0rs7Nf9c6XrW5Cb0xOJthVL9dps0PymsHndAamuTpqKEWGEfp32wMG0o63JZP4iI5MIPdWRbruMlvRifzpAcnxLAr3FOYoF5RL1Y8XsZ4EyXw6NwTwAdkVURVJsmycZL1ZjAa536tDPPQk5d8TtNoRyKF9YwkLsUbxSadXNM"
+var ghosturl = "http://178.62.11.184:2368/ghost/api/v0.1/posts?access_token="+
+"MxNZCmQbGyWTreBEfniMGTYegVTV5g7dQTNJmQAwDwFz8i6u7GN8XXRJyjiJJfjiet1UkFy0u3dSivQv5ktDXyd0k27GP2omd03ouaFN67KfVvCOwu0N28u3HBXNAXoX6rO1NM1qf0BeUXD762GoOMpLd4C8VgQ0tcuQOBk9u1Cqah4oqgGpoOdgXOnNsjD4sAAiDWZzoVYEYWZZwQQxjDPFB1y3vxjhAqdKC43n0upXWHtkSWdp0ifReRSSmsV"
 
 request({
     url: url,
