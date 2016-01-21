@@ -30,7 +30,7 @@ request({
 
 function getphotoinfo(photoid){
     var infourl =  "https://api.flickr.com/services/rest/?method=flickr.photos.getInfo"+
-    "&api_key=0b65598faae308e7ad174b21270b3da5"
+    "&api_key=0b65598faae308e7ad174b21270b3da5"+
     "&photo_id="+photoid+
     "&format=json"+
     "&nojsoncallback=1"
@@ -41,8 +41,8 @@ function getphotoinfo(photoid){
         function (error, response, body) {
             if (!error && response.statusCode === 200) {
                 console.log(infourl);
-                console.log(body);
-                //console.log(body.photo);
+                //console.log(body);
+                console.log(body.photo);
                 //console.log(body["photo"].description);
                 //console.log(body["photo"].dates.taken);
             }
