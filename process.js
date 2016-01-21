@@ -43,9 +43,10 @@ function getphotoinfo(photoid){
                 
                 console.log(body["photo"].description);
                 console.log(body["photo"].dates.taken);
-            });
-        }
-    })
+            }
+            
+        });
+    
 }
 
 function ghostpost(image, title){
