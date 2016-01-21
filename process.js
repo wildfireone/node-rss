@@ -20,7 +20,7 @@ request({
       body["photos"]["photo"].forEach(function(photo) {
           var imgurl = "https://farm"+photo.farm+".staticflickr.com/"+photo.server+"/"+photo.id+"_"+photo.secret+"_b.jpg";
           
-          ghostpost(imgurl, imgtitle);
+          ghostpost(imgurl, photo.title);
         console.log(imgurl);
         });
   }
