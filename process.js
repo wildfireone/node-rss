@@ -34,7 +34,7 @@ function ghostpost(image, title){
                 {
                     "status": "published",
                     "title": title,
-                    "markdown": "![alt text]("+image+"\"Logo Title Text 1\"')"
+                    "markdown": "!["+title+"]("+image+")"
                 }
                 ]
             }
