@@ -20,9 +20,9 @@ request({
   if (!error && response.statusCode === 200) {
       body["photos"]["photo"].forEach(function(photo) {
           var imgurl = "https://farm"+photo.farm+".staticflickr.com/"+photo.server+"/"+photo.id+"_"+photo.secret+"_b.jpg";
-          getphotoinfo(photo.id);
-          ghostpost(imgurl, photo.title);
-        console.log(imgurl);
+          var photoinfo = getphotoinfo(photo.id);
+          ghostpost(imgurl, photoinfo);
+        //console.log(imgurl);
         });
   }
     
@@ -40,9 +40,9 @@ function getphotoinfo(photoid){
         }, 
         function (error, response, body) {
             if (!error && response.statusCode === 200) {
-                console.log(infourl);
+                //console.log(infourl);
                 //console.log(body);
-                console.log(body.photo);
+                return body.photo;
                 //console.log(body["photo"].description);
                 //console.log(body["photo"].dates.taken);
             }
@@ -51,13 +51,16 @@ function getphotoinfo(photoid){
     
 }
 
-function ghostpost(image, title){
+function ghostpost(image, photo){
     var requestdata = {
             "posts": [
                 {
                     "status": "published",
-                    "title": title,
-                    "markdown": "!["+title+"]("+image+")"
+                    "title": photo.title,
+                    "markdown": "!["+photo.title+"]("+image+")\n"+
+                                photo.description+"\n"+
+                                "Taken on "+ photo.dates.taken
+                                
                 }
                 ]
             }
