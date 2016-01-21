@@ -40,10 +40,11 @@ function getphotoinfo(photoid){
         }, 
         function (error, response, body) {
             if (!error && response.statusCode === 200) {
+                console.log(infourl);
                 console.log(body);
-                console.log(body.photo);
-                console.log(body["photo"].description);
-                console.log(body["photo"].dates.taken);
+                //console.log(body.photo);
+                //console.log(body["photo"].description);
+                //console.log(body["photo"].dates.taken);
             }
             
         });
