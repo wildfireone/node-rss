@@ -42,7 +42,7 @@ function getphotoinfo(photoid, imgurl){
         function (error, response, body) {
             if (!error && response.statusCode === 200) {
                 console.log("info:"+infourl);
-                console.log(body.photo.title);
+                console.log(body.photo.title[0]);
                 ghostpost(imgurl, body.photo);
                 //console.log(body["photo"].description);
                 //console.log(body["photo"].dates.taken);
