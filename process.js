@@ -57,7 +57,7 @@ function ghostpost(image, photo){
             "posts": [
                 {
                     "status": "published",
-                    "title": photo.title,
+                    "title": photo.title._content,
                     "markdown": "!["+photo.title._content+"]("+image+")\n"+
                                 photo.description._content+"\n"+
                                 "Taken on "+ photo.dates.taken
