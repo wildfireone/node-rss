@@ -4,7 +4,7 @@ var request = require("request")
 var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search"+
 "&api_key=0b65598faae308e7ad174b21270b3da5"+
 "&user_id=55336091%40N08"+
-"&per_page=500"+
+"&per_page=1"+
 "&page="+
 "&format=json"+
 "&nojsoncallback=1"
