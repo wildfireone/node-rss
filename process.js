@@ -20,15 +20,15 @@ request({
   if (!error && response.statusCode === 200) {
       body["photos"]["photo"].forEach(function(photo) {
           var imgurl = "https://farm"+photo.farm+".staticflickr.com/"+photo.server+"/"+photo.id+"_"+photo.secret+"_b.jpg";
-          var photoinfo = getphotoinfo(photo.id);
-          ghostpost(imgurl, photoinfo);
+          getphotoinfo(photo.id, imgurl);
+          
         //console.log(imgurl);
         });
   }
     
 })
 
-function getphotoinfo(photoid){
+function getphotoinfo(photoid, imgurl){
     var infourl =  "https://api.flickr.com/services/rest/?method=flickr.photos.getInfo"+
     "&api_key=0b65598faae308e7ad174b21270b3da5"+
     "&photo_id="+photoid+
@@ -42,7 +42,7 @@ function getphotoinfo(photoid){
             if (!error && response.statusCode === 200) {
                 //console.log(infourl);
                 //console.log(body);
-                return body.photo;
+                ghostpost(imgurl, body.photo);
                 //console.log(body["photo"].description);
                 //console.log(body["photo"].dates.taken);
             }
