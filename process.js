@@ -42,7 +42,7 @@ function getphotoinfo(photoid, imgurl){
         function (error, response, body) {
             if (!error && response.statusCode === 200) {
                 console.log("info:"+infourl);
-                console.log(body.photo.title[0]);
+                console.log(body.photo.title._content);
                 ghostpost(imgurl, body.photo);
                 //console.log(body["photo"].description);
                 //console.log(body["photo"].dates.taken);
@@ -58,8 +58,8 @@ function ghostpost(image, photo){
                 {
                     "status": "published",
                     "title": photo.title,
-                    "markdown": "!["+photo.title+"]("+image+")\n"+
-                                photo.description+"\n"+
+                    "markdown": "!["+photo.title._content+"]("+image+")\n"+
+                                photo.description._content+"\n"+
                                 "Taken on "+ photo.dates.taken
                                 
                 }
